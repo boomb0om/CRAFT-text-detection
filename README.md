@@ -22,7 +22,17 @@ To test model you can run `test.py` file.
 
 ## Examples
 
-You can find usage examples in [example.ipynb](example.ipynb)
+```python
+from PIL import Image
+from CRAFT import CRAFTModel, draw_polygons
+
+model = CRAFTModel('weights/', 'cuda', use_refiner=True, fp16=True)
+img = Image.open('images/cafe_sign.jpg')
+polygons = model.get_polygons(img)
+result = draw_polygons(img, polygons)
+```
+
+You can find more usage examples in [example.ipynb](example.ipynb)
 
 ![](images/cafe_sign.jpg)
 
