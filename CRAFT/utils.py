@@ -48,21 +48,19 @@ def box_to_poly(box: List[List[int]]) -> List[List[int]]:
     return [box[0], [box[0][0], box[1][1]], box[1], [box[1][0], box[0][1]]]
 
 
-def boxes_area(img: Image.Image, bboxes: List[List[List[int]]]) -> int:
-    img_s = img.size[0]*img.size[1]
+def boxes_area(bboxes: List[List[List[int]]]) -> int:
     total_S = 0
     for box in bboxes:
         pgon = Polygon(box_to_poly(box)) 
         S = pgon.area
         total_S+=S
-    return total_S/img_s
+    return total_S
 
 
-def polygons_area(img: Image.Image, polygons: List[List[List[int]]]) -> int:
-    img_s = img.size[0]*img.size[1]
+def polygons_area(polygons: List[List[List[int]]]) -> int:
     total_S = 0
     for poly in polygons:
         pgon = Polygon(poly) 
         S = pgon.area
         total_S+=S
-    return total_S/img_s
+    return total_S

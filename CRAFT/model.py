@@ -122,9 +122,7 @@ class CRAFTModel:
             res.append(poly.astype(np.int32).tolist())
         return res
     
-    def get_boxes(self, image: Image.Image) -> List[List[List[int]]]:
-        x, ratio_w, ratio_h = preprocess_image(np.array(image), self.canvas_size, self.mag_ratio)
-        
+    def _get_boxes_preproc(self, x, ratio_w, ratio_h) -> List[List[List[int]]]:
         score_text, score_link = self.get_text_map(x, ratio_w, ratio_h)
         
         # Post-processing
@@ -141,4 +139,10 @@ class CRAFTModel:
             for box in boxes:
                 boxes_final.append([box[0], box[2]])
 
+        return boxes_final
+    
+    def get_boxes(self, image: Image.Image) -> List[List[List[int]]]:
+        x, ratio_w, ratio_h = preprocess_image(np.array(image), self.canvas_size, self.mag_ratio)
+        
+        boxes_final = self._get_boxes_preproc(x, ratio_w, ratio_h)
         return boxes_final
