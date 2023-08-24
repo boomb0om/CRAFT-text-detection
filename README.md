@@ -12,6 +12,11 @@ Main features of this implementation:
 
 ## Installation
 
+Recommended:
+```bash
+pip install git+https://github.com/boomb0om/CRAFT-text-detection/
+```
+or
 ```bash
 git clone https://github.com/boomb0om/CRAFT-text-detection
 cd CRAFT-text-detection/
