@@ -8,10 +8,10 @@ import numpy as np
 import cv2
 from huggingface_hub import hf_hub_url, cached_download
 
-from .craft import CRAFT, init_CRAFT_model
-from .refinenet import RefineNet, init_refiner_model
-from .craft_utils import adjustResultCoordinates, getDetBoxes
-from .imgproc import resize_aspect_ratio, normalizeMeanVariance
+from CRAFT.craft import CRAFT, init_CRAFT_model
+from CRAFT.refinenet import RefineNet, init_refiner_model
+from CRAFT.craft_utils import adjustResultCoordinates, getDetBoxes
+from CRAFT.imgproc import resize_aspect_ratio, normalizeMeanVariance
 
 
 HF_MODELS = {

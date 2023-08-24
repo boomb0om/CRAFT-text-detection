@@ -10,7 +10,7 @@ setup(
     description="",
     author="Igor Pavlov, Youngmin Baek, Bado Lee, Dongyoon Han, Sangdoo Yun, Hwalsuk Lee",
     url='https://github.com/boomb0om/CRAFT-text-detection',
-    packages=find_packages(include=['CRAFT', 'CRAFT/basenet']),
+    packages=find_packages(include=['CRAFT', 'CRAFT.*']),
     install_requires=[
         str(r)
         for r in pkg_resources.parse_requirements(
