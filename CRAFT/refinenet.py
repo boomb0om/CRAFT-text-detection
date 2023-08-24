@@ -8,8 +8,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
-from CRAFT.basenet.vgg16_bn import init_weights
-from CRAFT.utils import copyStateDict
+from .basenet.vgg16_bn import init_weights
+from .utils import copyStateDict
 
 
 class RefineNet(nn.Module):

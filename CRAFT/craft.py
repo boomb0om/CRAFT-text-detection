@@ -8,9 +8,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from CRAFT.basenet.vgg16_bn import vgg16_bn, init_weights
-from CRAFT.utils import copyStateDict
-from CRAFT.fp16 import FP16Module
+from .basenet.vgg16_bn import vgg16_bn, init_weights
+from .utils import copyStateDict
+from .fp16 import FP16Module
 
 
 class double_conv(nn.Module):
