@@ -111,11 +111,12 @@ class CRAFTModel:
             self.text_threshold, self.link_threshold, 
             self.low_text, True
         )
-        
         boxes = adjustResultCoordinates(boxes, ratio_w, ratio_h)
-        polys = adjustResultCoordinates(polys, ratio_w, ratio_h)
         for k in range(len(polys)):
-            if polys[k] is None: polys[k] = boxes[k]
+            if polys[k] is None: 
+                polys[k] = boxes[k]
+            else:
+                polys[k] = adjustResultCoordinates(polys[k], ratio_w, ratio_h)
 
         res = []
         for poly in polys:
